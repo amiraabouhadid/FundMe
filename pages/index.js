@@ -3,7 +3,7 @@ import { Card, Button } from "semantic-ui-react";
 import factory from "../ethereum/factory";
 import Layout from "../components/Layout";
 import { Link } from "../routes";
-import 'semantic-ui-css/semantic.min.css'
+
 class CampaignIndex extends Component {
   static async getInitialProps() {
     const campaigns = await factory.methods.getDeployedCampaigns().call();
@@ -20,6 +20,7 @@ class CampaignIndex extends Component {
           </Link>
         ),
         fluid: true,
+        style: { overflowWrap: "break-word" },
       };
     });
     return <Card.Group items={items} />;
